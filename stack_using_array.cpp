@@ -13,6 +13,7 @@ public:
 // Initialize empty stack
     Stack()
     {
+        // -1 indicates the stack is currently empty (0 would mean the first index)
         top = -1;
     }
 
@@ -38,6 +39,7 @@ public:
     }
 
     // Check if the stack has reached its maximum capacity
+    // Time Complexity: O(1)
     int full(void)
     {
         if (top == MAX - 1)
@@ -78,6 +80,9 @@ int main()
     int x;
     Stack s;
 
+    // Enqueue elements up to the MAX capacity (5)
+    // The class now handles overflow internally, but checking beforehand is also fine.
+    
     if (!s.full()) s.push(12);
     if (!s.full()) s.push(34);
     if (!s.full()) s.push(56);
