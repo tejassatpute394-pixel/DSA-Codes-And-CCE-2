@@ -1,3 +1,10 @@
+/*
+ * Linear Queue Implementation using Static Array in C++
+ * Features basic operations: enqueue (O(1)), dequeue (O(1)), and peek.
+ * Note: This implementation uses a linear approach, meaning freed space 
+ * at the front is not reused until the queue is completely reset.
+ */
+
 #include <iostream>
 using namespace std;
 
