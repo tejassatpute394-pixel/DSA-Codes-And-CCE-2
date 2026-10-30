@@ -4,8 +4,8 @@ using namespace std;
 // Node class for the linked list
 class node {
 public:
-    int data;
-    node *next;
+    int data; // Stores the actual value
+    node *next; // Pointer to the node directly below it in the stack
 
     node(int x) {
         data = x;
@@ -16,7 +16,7 @@ public:
 // Stack class managing the linked list
 class stack {
 private:
-    node *top;
+    node *top; // Pointer pointing to the topmost node of the stack
 
 public:
 // Initialize an empty stack
@@ -57,6 +57,8 @@ public:
     // Print all elements from top to bottom
     void display() {
         node *q = top;
+
+        // Traverse downwards until reaching the end of the linked list (NULL)
         while (q != NULL) {
             cout << endl << q->data;
             q = q->next;
@@ -68,6 +70,7 @@ int main() {
     int x;
     stack s;
 
+    // Push elements onto the stack (Dynamic memory, no overflow risk)
     s.push(990);
     s.push(810);
     s.push(333);
