@@ -12,7 +12,7 @@ public:
     node(int x)
     {
         data = x;
-        next = NULL;
+        next = NULL; // Always initialize next to NULL to prevent garbage pointer issues
     }
 };
 
@@ -20,8 +20,8 @@ public:
 class queue
 {
 private:
-    node *front;
-    node *rear;
+    node *front;// Pointer to the first element (where we dequeue)
+    node *rear; // Pointer to the last element (where we enqueue)
 
 public:
 // Constructor to initialize an empty queue
@@ -33,7 +33,7 @@ public:
     // Function to check if the queue is empty
     int empty(void)
     {
-        if (front == NULL)
+        if (front == NULL) // Initially, both pointers point to nothing
         {
             return 1;
         }
@@ -52,6 +52,7 @@ public:
             return -1;
         }
 
+        // Return the data of the node that the front pointer is looking at
         return front->data;
     }
 
@@ -103,6 +104,7 @@ public:
 
         cout << "\nQueue elements: ";
 
+        // Traverse the linked list until we reach the end (NULL)
         while (q != NULL)
         {
             cout << "\t" << q->data;
